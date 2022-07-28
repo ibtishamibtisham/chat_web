@@ -4,68 +4,33 @@ import TollIcon from "@mui/icons-material/Toll";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
+import UserProfile from "./UserProfile";
+import "./Sidebar.css";
 
 export function Sidebar() {
   return (
-    <div style={{ width: "30%", maxWidth: "300px" }}>
-      <Box
-        sx={{
-          display: "flex",
-          background: "lightgrey",
-          justifyContent: "space-around",
-          width: "300px",
-        }}
-      >
-        <Box>
-          <Avatar alt="Remy Sharp" src="./user.png" />
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            width: "150px",
-            margin: "center",
-          }}
-        >
+    <div className="sidebar">
+      <div className="sidebar-header">
+        <div className="sidebar-header-img">
+          <img src="./user.png" alt="" />
+        </div>
+        <div className="sidebar-header-btn">
           <TollIcon />
           <InsertCommentIcon />
           <MoreVertIcon />
-        </Box>
-      </Box>
-      <Box
-        sx={{
-          height: "60px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "#f6f6f6",
-        }}
-      >
-        <div
-          style={{
-            width: "90%",
-            display: "flex",
-            alignItems: "center",
-            backgroundColor: "#fff",
-            border: "1px solid lightgrey",
-            borderRadius: "5px",
-          }}
-        >
-          <SearchIcon
-            style={{ fontSize: "18px", color: "#acacac", marginLeft: "10px" }}
-          />
-          <input
-            placeholder="Search..."
-            style={{
-              border: "none",
-              background: "transparent",
-              width: "80%",
-              outline: "none",
-            }}
-          />
         </div>
-      </Box>
+      </div>
+
+      <div className="sidebar-search">
+        <div className="sidebar-search-input">
+          <SearchIcon />
+          <input type="text" name="search" placeholder="Search..." />
+        </div>
+      </div>
+
+      <div className="sidebar-chat-list">
+        <UserProfile name="hello" photoURL="./user.png" />
+      </div>
     </div>
   );
 }

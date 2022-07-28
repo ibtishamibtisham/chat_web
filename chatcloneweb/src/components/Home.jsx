@@ -1,12 +1,18 @@
 import React from "react";
+import "./Home.css";
 import { Sidebar } from "./Sidebar";
 
-export default function Home() {
+function Home({ currentUser, signOut }) {
   return (
     <div className="home">
       <div className="home-container">
         <Sidebar />
+        <div className="home-bg">
+          <img src="./Icon-WhatsApp.png" alt="" />
+        </div>
       </div>
     </div>
   );
 }
+
+export default Home;
